@@ -1,0 +1,4 @@
+# Netlify redirects file
+# This enables client-side routing
+
+/*    /index.html   200
