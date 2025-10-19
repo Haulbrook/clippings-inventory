@@ -27,16 +27,15 @@ async function callAPI(functionName, params) {
   const timeoutId = setTimeout(() => controller.abort(), CONFIG.TIMEOUT);
 
   try {
-    const response = await fetch(CONFIG.API_URL, {
-      method: 'POST',
+    // Use GET with query parameters to avoid CORS preflight
+    const url = new URL(CONFIG.API_URL);
+    url.searchParams.append('function', functionName);
+    url.searchParams.append('parameters', JSON.stringify(params));
+
+    const response = await fetch(url, {
+      method: 'GET',
       mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        function: functionName,
-        parameters: params
-      }),
+      redirect: 'follow',
       signal: controller.signal
     });
 
