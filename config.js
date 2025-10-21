@@ -19,7 +19,7 @@
 
 const CONFIG = {
   // Replace this with your actual Google Apps Script Web App URL
-  API_URL: 'https://script.google.com/macros/s/AKfycbxhPEdXxppAvKN00ij1GkbIwJ_iH0HsnOuT8hgvTmqN15NWS-k2ud2yTvNouDA-NiHs/exec',
+  API_URL: 'https://script.google.com/macros/s/AKfycbz8MmgXv4v6OmDDWI-C7f2WL4K9o94dYn9decpxsIyfUfGPtJOdYb7W54t64tMof7l7/exec',
 
   // API timeout in milliseconds (30 seconds default)
   TIMEOUT: 30000,
@@ -29,7 +29,7 @@ const CONFIG = {
 };
 
 // Validate configuration on load
-if (CONFIG.API_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE' || !CONFIG.API_URL.includes('script.google.com')) {
+if (CONFIG.API_URL === 'https://script.google.com/macros/s/AKfycbz8MmgXv4v6OmDDWI-C7f2WL4K9o94dYn9decpxsIyfUfGPtJOdYb7W54t64tMof7l7/exec' || !CONFIG.API_URL.includes('script.google.com')) {
   console.warn('⚠️ API URL not configured! Please update config.js with your Google Apps Script URL.');
   document.addEventListener('DOMContentLoaded', function() {
     const warning = document.getElementById('configWarning');
